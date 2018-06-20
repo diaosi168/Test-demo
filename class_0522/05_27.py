@@ -1,6 +1,5 @@
 
 
-
 '''LIST_1=[1,2,3]  #全局变量
 def print_list():
     LIST_1=10
