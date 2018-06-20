@@ -1,7 +1,3 @@
-
-
-
-
 import unittest
 import HTMLTestRunnerNew
 import time
