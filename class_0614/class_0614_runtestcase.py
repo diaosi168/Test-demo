@@ -2,6 +2,7 @@
 import time
 import unittest
 import HTMLTestRunnerNew
+import HTMLTestRunnerCN
 from class_0614.class_0614_testcase import DoExcel
 from class_0614.class_0614_testcase import TestHttpRuqust
 
@@ -24,10 +25,11 @@ for i in range(len(test_data)):
 now=time.strftime('%Y-%m-%d_%H_%M_%S')  #引入时间戳，获取当前时间
 file_path='home_work'+now+'.html'
 
+
 #执行用例
 with open(file_path,'wb')as file_path:
     runner=HTMLTestRunnerNew.HTMLTestRunner(stream=file_path, verbosity=2, title='故事', description='test_06_14',
-                                              tester='duolala')
+                                              )
     runner.run(suite)
 
 

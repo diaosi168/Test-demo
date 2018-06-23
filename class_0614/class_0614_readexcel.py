@@ -16,6 +16,14 @@ class DoExcel:
         self.work_excel = work_excel
         self.sheet = sheet
 
+    def write_data(self,row,actaul,result):      #写入测试结果
+        wb=load_workbook(self.work_excel)
+        sheet=wb[self.sheet]
+        sheet.cell(row,7).value=actaul
+        sheet.cell(row,8).value=result
+        wb.save(self.work_excel)
+
+
     def read_data(self):
         wd = load_workbook(self.work_excel)
         sheet = wd[self.sheet]

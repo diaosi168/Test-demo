@@ -1,6 +1,7 @@
 
 
 import requests
+from class_0614.class_0614_readexcel import DoExcel
 
 class HttpRequest:   #Http请求类，完成get，post请求
     def __init__(self,url,param):
@@ -25,7 +26,37 @@ if __name__=="__main__":
     url='http://v.juhe.cn/laohuangli/d'
     param={'date':'2018-09-11','key':'8a3ec3b083789ba147be957a301a2b3f'}
     t=HttpRequest(url,param)
-    print(t.get_post_http_requests('GET'))
+    print(t.get_post_http_requests('POST'))
+
+    '''test_data=DoExcel('test_case_0614.xlsx', 'test_data').read_data()
+
+    for i in range(len(test_data)):
+    #for i in range(1):
+        url = test_data[i][3]
+        param = test_data[i][4]
+        method = test_data[i][2]
+        expected = test_data[i][5]
+        case_id = test_data[i][0]
+
+        response=HttpRequest(url,eval(param)).get_post_http_requests(method)
+        print(response)'''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
