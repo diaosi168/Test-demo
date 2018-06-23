@@ -5,7 +5,7 @@ import HTMLTestRunnerNew
 import time
 
 
-from class_0612.class_0612_2 import Http
+from class_0612.class_0612_httprequests import HttpRequest
 
 
 class TestHttp(unittest.TestCase):
@@ -15,7 +15,7 @@ class TestHttp(unittest.TestCase):
         self.param={'date':'2018-09-11','key':'a8f2732319cf0ad3cce8ec6ef7aa4f33'}
 
     def test_get_post_ruquests(self):
-        t=Http(self.url,self.param)
+        t=HttpRequest(self.url,self.param)
         response=t.get_post_http_requests('post')
         self.assertEqual('错误的请求KEY!!',response['reason'])
 
@@ -23,7 +23,7 @@ class TestHttp(unittest.TestCase):
         print('结束测试')
 
 suite=unittest.TestSuite()
-loader=unittest.TestLoader()
+#loader=unittest.TestLoader()
 suite.addTest(TestHttp('test_get_post_ruquests'))
 
 now=time.strftime('%Y-%m-%d_%H_%M_%S')  #引入时间戳，获取当前时间

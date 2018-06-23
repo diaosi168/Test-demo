@@ -28,10 +28,15 @@ cursor=cnn.cursor()
 #cursor.execute(sql,data)
 
 #insert 语句
-sql_insert='insert into onlyjack(age,name) values(%s,%s)'
-data=(18,'duolala')
+sql_insert='insert into onlyjack(age,name) values(%(age)s,%(name)s)'     #字典insert的写法
+sql_insert='insert into onlyjack(age,name) values(%s,%s)'   #元祖，列表insert的写法
+#data=(8888,'duolala')    #单独一条插入，元祖的格式
+#data=[(22,'heaven'),(32,'duolala')]   #多条插入，列表
+data={'age':55,'name':'diudiu'}      #字典
+
 #执行语句
-cursor.execute(sql_insert,data)
+cursor.execute(sql_insert,data)  #以元祖，字典的形式，新增一条插入信息读取
+#cursor.executemany(sql_insert,data)   #以列表的形式，新增多条插入语句读取
 cursor.execute('commit')
 #fetchone  fetchall读取查询结果
 #fetchone:从结果集里面读取一条数据
