@@ -29,13 +29,13 @@ if __name__ == '__main__':
 
     cf = configparser.ConfigParser()
     cf.read('db.conf')
-    config = eval(cf.get('DATABASE','config'))
+    config = eval(cf.get('DATABASE','config'))  #根据指定的未知传入section ，option
 
-    t=Test_Dbsql(config)
+    t=Test_Dbsql(config)   #原始配置文件中读取出来的数据是str，要转换成dictionary，需要加一个eval，加eval是Python能够识别的最原始的数据类型
 
     query_1 ='select * from student where id<%s'
     condtion_1 =(20,)
-    print(t.get_data(query_1,condtion_1))
+    print(t.get_data(query_1,condtion_1,1))
     query_2 = 'insert into student(age,name)values (%s,%s)'
     condtion_2 = (20, 'duolala')
-    print(t.get_data(query_2,condtion_2 ))
+    print(t.get_data(query_2,condtion_2,2))
