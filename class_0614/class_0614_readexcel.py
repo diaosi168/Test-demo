@@ -1,5 +1,7 @@
 
 
+import pymysql.connections
+
 #1：利用6-12号写的excel数据读取类以及6月9号写的HTTP单元测试类，完成老黄历的单元测试，且输出测试报告。
 # （注意是要从Excel里面获取测试 数据哦~并且把测试结果写回到Excel中去。
 
@@ -43,14 +45,27 @@ if __name__ == '__main__':
 
 
 
-
-
-
-
-
-
-
-
 #2：结合mysqlconnector 编写一个数据库操作类，完成指定数据库的操作类。
 
+class DoMysql:
+    def __init__(self,config,sql,data):
+        self.config=config
+        self.sql=sql
+        self.data=data
+
+    def get_data(self):
+        cnn=pymysql.connect(**self.config)
+        cursor=cnn.cursor()
+        cursor.execute(self.sql,self.data)
+        result=cursor.fetchall()
+        cursor.close()
+        cnn.close()
+        return result
+if __name__ == '__main__':
+    config = {'host': '118.126.108.173',  # 主机
+              'user': 'python',  # 用户名
+              'password': 'python5666',  # 密码
+              'port': 3306,  # 端口
+              'database': 'test_summer',  # 数据库名
+              }
 

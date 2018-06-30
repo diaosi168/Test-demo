@@ -29,7 +29,7 @@ file_path='home_work'+now+'.html'
 #执行用例
 with open(file_path,'wb')as file_path:
     runner=HTMLTestRunnerNew.HTMLTestRunner(stream=file_path, verbosity=2, title='故事', description='test_06_14',
-                                              )
+                                            tester='duolala')
     runner.run(suite)
 
 

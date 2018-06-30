@@ -24,7 +24,7 @@ class HttpRequest:   #Http请求类，完成get，post请求
 
 if __name__=="__main__":
     url='http://v.juhe.cn/laohuangli/d'
-    param={'date':'2018-09-11','key':'8a3ec3b083789ba147be957a301a2b3f'}
+    param={'date':'2018-09-11','key':'722d7fd7ab0b8702cdffb8851a15f977'}
     t=HttpRequest(url,param)
     print(t.get_post_http_requests('POST'))
 
