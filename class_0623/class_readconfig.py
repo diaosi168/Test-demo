@@ -50,7 +50,7 @@ class MyLog:
         return file_1
 
 if __name__ == '__main__':
-    mylog=MyLog('log.conf').log_conf()
+    mylog=MyLog('logger.conf').log_conf()
     mylog.debug('debug调试信息 级别最低')
     mylog.info('info详细信息：数据 进度等')
     mylog.warning('warning警告信息')

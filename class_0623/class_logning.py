@@ -30,7 +30,7 @@ class MylogL:
         logger.addHandler(fh)   #（fh）追加输入渠道
         return logger
 if __name__ == '__main__':
-    logger=MylogL.my_log('duolala','ERROR','test_logging.txt')
+    logger=MylogL.my_log('duolala','ERROR','logging.txt')
     #收集不同级别的日志，从低到高
     logger.debug('duolala')
     logger.info('heaven')
