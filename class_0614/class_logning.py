@@ -10,7 +10,7 @@ import logging
 
 #1.日志收集器 logger-->日志收集器
 #2.输出渠道  console file
-class MylogL:
+class Mylog:
     def my_log(name,level,file_path):     #file_path随意指定日志的路径名称
 
         #创建一个日志收集器，确定日志的级别
@@ -30,7 +30,7 @@ class MylogL:
         logger.addHandler(fh)   #（fh）追加输入渠道
         return logger
 if __name__ == '__main__':
-    logger=MylogL.my_log('duolala','ERROR','test_logging.txt')
+    logger=Mylog.my_log('duolala','ERROR','test_logging.txt')
     #收集不同级别的日志，从低到高
     logger.debug('duolala')
     logger.info('heaven')

@@ -6,12 +6,14 @@ import HTMLTestRunnerNew
 from class_0614.class_0614_readexcel import DoExcel
 from class_0614.class_httprequests import HttpRequest
 from ddt import ddt,data,unpack
+from class_0614 import class_logning
+#logger=class_logning.Mylog('http','INFO','http_logging.txt')
 test_data=DoExcel('test_case_0614.xlsx', 'test_data').read_data()
 @ddt
 class TestHttpRuqust(unittest.TestCase):
     def setUp(self):
-        print('开始执行测试用例')
         self.t=DoExcel('test_case_0614.xlsx', 'test_data')
+        print('开始执行测试用例')
 
     '''def __init__(self,url,param,method,expected,case_id,methodName='runTest'):
         super(TestHttpRuqust,self).__init__(methodName)
