@@ -22,7 +22,7 @@ class MyLog:
         mylogger = logging.Logger(self.logger_name,level=self.logger_level)
 
         try:
-            if(self.state)==1:          #state==1输出到控制台
+            if int(self.state)==1:          #state==1输出到控制台
                 mylogger.addHandler(self.log_stream())
             elif int(self.state)==2:    #state==2输出到file文件
                 mylogger.addHandler(self.log_file())
