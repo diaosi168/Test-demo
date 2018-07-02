@@ -26,9 +26,9 @@ if __name__ == '__main__':
     recharge='http://119.23.241.154:8080/futureloan/mvc/api/member/recharge'
 
     #请求参数
-    register_param={'mobilephone' : '18565752546', 'pwd' : '123456'}
-    login_param={'mobilephone' : '18565752546', 'pwd' : '123456'}
-    recharge_param={'mobilephone' : '18565752546', 'amount' : '500'}
+    register_param={'mobilephone' : '18565752547', 'pwd' : '123456'}
+    login_param={'mobilephone' : '18565752547', 'pwd' : '123456'}
+    recharge_param={'mobilephone' : '18565752547', 'amount' : '500'}
 
     #注册
     res_register=HttpRequests(register,register_param).http_request('get',cookies=None)
@@ -43,4 +43,4 @@ if __name__ == '__main__':
     #充值
     res_recharge=HttpRequests(recharge,recharge_param).http_request('get',cookies=cookies)
     print(res_recharge.json())
-    print(res_recharge.cookies)
+    print(res_recharge.cookies=={})
